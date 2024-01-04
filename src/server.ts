@@ -15,7 +15,8 @@ server.use(express.static(path.join(__dirname, "../public")));
 
 server.use(mainRoutes);
 server.use((req, res) => {
-  res.send("Nenhuma página encontrada!");
+  res.render("pages/404");
 });
 
-server.listen(process.env.PORT, () => console.log('Server running on port 4000'));
+server.listen(process.env.PORT, 
+    () => console.log('Server running on port 4000'));
